@@ -1,0 +1,73 @@
+body {
+	font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Segoe UI", FreeSans, Arial, sans-serif;
+	margin: 5em auto 3em auto;
+	color: rgb(238, 238, 238);
+	background-color: rgb(34, 34, 34);
+	font-size: 1.15rem;
+	line-height: 1.8;
+	max-width: min(90%, 1000px);
+}
+
+img {
+	border-radius: .5rem;
+	height: auto;
+	max-width: 100%
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgb(24, 24, 24);
+	border-bottom: solid 1px #333;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+}
+
+nav li {
+	list-style: none;
+	float: left;
+}
+
+nav li a {
+	display: block;
+	padding: 1em;
+	text-decoration: none;
+	color: #ccc !important;
+}
+
+nav li a:hover {
+	color: #fff;
+}
+
+table,
+th,
+td {
+	border: 1px solid #eee;
+}
+
+td,
+th {
+	padding: 0.5em;
+}
+
+a {
+	text-decoration: none;
+	color: #769DFF;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #b775fe;
+}
+
+#distro-img {
+	width: fit-content;
+	background-color: #eee;
+	padding: 0.5em;
+	border-radius: 0.2em;
+}
