@@ -64,13 +64,13 @@
 
 		#city {
 			position: absolute;
-			top: 305px;
+			top: 308px;
 			left: 330px;
 		}
 
 		#zip {
 			position: absolute;
-			top: 405px;
+			top: 408px;
 			left: 330px;
 		}
 
