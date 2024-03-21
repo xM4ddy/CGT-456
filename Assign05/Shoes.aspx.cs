@@ -36,11 +36,11 @@ public partial class Shoes : Page
             oConn = new SqlConnection(dbConn.connStr);
             oConn.Open();
 
-            SQL = "SELECT * FROM Assign05Shoes WHERE ShoeID=@ShoeID";
+            SQL = "SELECT * FROM Assign05Shoes WHERE ShoeID=@shoeID";
             cmd = new SqlCommand(SQL, oConn);
-            cmd.Parameters.Add(new SqlParameter("@ShoeID", SqlDbType.Int, 4));
+            cmd.Parameters.Add(new SqlParameter("@shoeID", SqlDbType.Int, 4));
 
-            cmd.Parameters["@ShoeID"].Value = dt.Rows[0][0].ToString();
+            cmd.Parameters["@shoeID"].Value = dt.Rows[0][0].ToString();
 
             results.DataSource = cmd.ExecuteReader();
             results.DataBind();
@@ -51,7 +51,7 @@ public partial class Shoes : Page
     protected void Update_Click(object sender, EventArgs e)
     {
         dbConn = new DbConn();
-        SQL = "SELECT Max(ProductID) AS MaxID FROM Products_Lab5";
+        SQL = "SELECT Max(ShoeID) AS MaxID FROM Assign05Shoes";
         ds = new DataSet();
         ds = dbConn.createDataSet(SQL);
         dt = new DataTable();
@@ -60,13 +60,13 @@ public partial class Shoes : Page
         if (dt.Rows[0][0].ToString() != "")
         {
             oConn = new SqlConnection(dbConn.connStr);
-            SQL = "UPDATE Products_Lab5 SET Title=@title WHERE ProductID=@prodID";
+            SQL = "UPDATE Assign05Shoes SET Name=@name WHERE ShoeID=@shoeID";
             cmd = new SqlCommand(SQL, oConn);
 
-            cmd.Parameters.Add(new SqlParameter("@prodID", System.Data.SqlDbType.Int, 4));
-            cmd.Parameters.Add(new SqlParameter("@title", System.Data.SqlDbType.VarChar, 100));
-            cmd.Parameters["@prodID"].Value = dt.Rows[0][0].ToString();
-            cmd.Parameters["@title"].Value = "New Title Value";
+            cmd.Parameters.Add(new SqlParameter("@shoeID", SqlDbType.Int, 4));
+            cmd.Parameters.Add(new SqlParameter("@name", SqlDbType.VarChar, 100));
+            cmd.Parameters["@shoeID"].Value = dt.Rows[0][0].ToString();
+            cmd.Parameters["@name"].Value = "New Shoe Name";
 
             oConn.Open();
             cmd.ExecuteNonQuery();
@@ -79,7 +79,7 @@ public partial class Shoes : Page
     protected void Delete_Click(object sender, EventArgs e)
     {
         dbConn = new DbConn();
-        SQL = "SELECT Max(ProductID) AS MaxID FROM Products_Lab5";
+        SQL = "SELECT Max(ShoeID) AS MaxID FROM Assign05Shoes";
         ds = new DataSet();
         ds = dbConn.createDataSet(SQL);
         dt = new DataTable();
@@ -88,11 +88,11 @@ public partial class Shoes : Page
         if (dt.Rows[0][0].ToString() != "")
         {
             oConn = new SqlConnection(dbConn.connStr);
-            SQL = "DELETE FROM Products_Lab5 WHERE ProductID=@prodID";
+            SQL = "DELETE FROM Assign05Shoes WHERE ShoeID=@shoeID";
             cmd = new SqlCommand(SQL, oConn);
 
-            cmd.Parameters.Add(new SqlParameter("@prodID", SqlDbType.Int, 4));
-            cmd.Parameters["@prodID"].Value = dt.Rows[0][0].ToString();
+            cmd.Parameters.Add(new SqlParameter("@shoeID", SqlDbType.Int, 4));
+            cmd.Parameters["@shoeID"].Value = dt.Rows[0][0].ToString();
 
             oConn.Open();
             cmd.ExecuteNonQuery();
@@ -104,28 +104,20 @@ public partial class Shoes : Page
     protected void Insert_Click(object sender, EventArgs e)
     {
         dbConn = new DbConn();
-        SQL = "INSERT INTO Products_Lab5(title, authors, copyrightDate, edition, isbn, coverart, description, price) ";
-        SQL = SQL + "VALUES(@title, @authors, @copyrightDate, @edition, @isbn, @coverart, @description, @price)";
+        SQL = "INSERT INTO Assign05Shoes(Name, Description, Color, Laces) ";
+        SQL = SQL + "VALUES(@name, @description, @color, @laces)";
         oConn = new SqlConnection(dbConn.connStr);
         cmd = new SqlCommand(SQL, oConn);
 
-        cmd.Parameters.Add(new SqlParameter("@title", SqlDbType.VarChar, 100));
-        cmd.Parameters.Add(new SqlParameter("@authors", SqlDbType.VarChar, 100));
-        cmd.Parameters.Add(new SqlParameter("@copyrightDate", SqlDbType.VarChar, 6));
-        cmd.Parameters.Add(new SqlParameter("@edition", SqlDbType.VarChar, 6));
-        cmd.Parameters.Add(new SqlParameter("@isbn", SqlDbType.VarChar, 25));
-        cmd.Parameters.Add(new SqlParameter("@coverart", SqlDbType.VarChar, 100));
+        cmd.Parameters.Add(new SqlParameter("@name", SqlDbType.VarChar, 100));
         cmd.Parameters.Add(new SqlParameter("@description", SqlDbType.VarChar, 100));
-        cmd.Parameters.Add(new SqlParameter("@price", SqlDbType.VarChar, 100));
+        cmd.Parameters.Add(new SqlParameter("@color", SqlDbType.VarChar, 6));
+        cmd.Parameters.Add(new SqlParameter("@laces", SqlDbType.VarChar, 6));
 
-        cmd.Parameters["@title"].Value = "MSFT Visual Studio .NET";
-        cmd.Parameters["@authors"].Value = "Bob and Carol";
-        cmd.Parameters["@copyrightDate"].Value = "2009";
-        cmd.Parameters["@edition"].Value = "2009";
-        cmd.Parameters["@isbn"].Value = "0735475849";
-        cmd.Parameters["@coverart"].Value = "Joe Smith";
-        cmd.Parameters["@description"].Value = "A book about .NET n stuff";
-        cmd.Parameters["@price"].Value = "$356.19";
+        cmd.Parameters["@name"].Value = "Nike Air Jordan 1";
+        cmd.Parameters["@description"].Value = "Cool High Top Sneaker";
+        cmd.Parameters["@color"].Value = "pink";
+        cmd.Parameters["@laces"].Value = "blue";
 
         oConn.Open();
         cmd.ExecuteNonQuery();
@@ -137,7 +129,7 @@ public partial class Shoes : Page
     protected void DeleteAll_Click(object sender, EventArgs e)
     {
         dbConn = new DbConn();
-        SQL = "DELETE FROM Products_Lab5";
+        SQL = "DELETE FROM Assign05Shoes";
         oConn = new SqlConnection(dbConn.connStr);
         cmd = new SqlCommand(SQL, oConn);
 
@@ -151,7 +143,7 @@ public partial class Shoes : Page
     protected void Truncate_Click(object sender, EventArgs e)
     {
         dbConn = new DbConn();
-        SQL = "TRUNCATE TABLE Products_Lab5";
+        SQL = "TRUNCATE TABLE Assign05Shoes";
         oConn = new SqlConnection(dbConn.connStr);
         cmd = new SqlCommand(SQL, oConn);
 

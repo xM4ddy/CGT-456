@@ -63,8 +63,8 @@ public partial class Default : Page
             SQL = "UPDATE Products_Lab5 SET Title=@title WHERE ProductID=@prodID";
             cmd = new SqlCommand(SQL, oConn);
 
-            cmd.Parameters.Add(new SqlParameter("@prodID", System.Data.SqlDbType.Int, 4));
-            cmd.Parameters.Add(new SqlParameter("@title", System.Data.SqlDbType.VarChar, 100));
+            cmd.Parameters.Add(new SqlParameter("@prodID", SqlDbType.Int, 4));
+            cmd.Parameters.Add(new SqlParameter("@title", SqlDbType.VarChar, 100));
             cmd.Parameters["@prodID"].Value = dt.Rows[0][0].ToString();
             cmd.Parameters["@title"].Value = "New Title Value";
 

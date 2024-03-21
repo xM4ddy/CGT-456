@@ -1,0 +1,16 @@
+INSERT INTO Assign05Shoes (Name, Description, Color, Laces) VALUES ('Nike Air Jordan 1', 'High Top Sneaker', 'White',  'Blak');
+INSERT INTO Assign05Shoes (Name, Description, Color, Laces) VALUES ('Nike Air Jordan 2', 'High Top Sneaker', 'Blue',   'Red');
+INSERT INTO Assign05Shoes (Name, Description, Color, Laces) VALUES ('Nike Air Jordan 3', 'High Top Sneaker', 'Red',    'Blue');
+INSERT INTO Assign05Shoes (Name, Description, Color, Laces) VALUES ('Nike Air Jordan 4', 'High Top Sneaker', 'Green',  'Purp');
+INSERT INTO Assign05Shoes (Name, Description, Color, Laces) VALUES ('Nike Air Jordan 5', 'High Top Sneaker', 'Yellow', 'Viol');
+INSERT INTO Assign05Shoes (Name, Description, Color, Laces) VALUES ('Nike Air Jordan 6', 'High Top Sneaker', 'Orange', 'Blue');
+INSERT INTO Assign05Shoes (Name, Description, Color, Laces) VALUES ('Nike Air Jordan 7', 'High Top Sneaker', 'Pink',   'Pink');
+
+UPDATE Assign05Shoes SET Laces='Blue' WHERE Color='Blue';
+UPDATE Assign05Shoes SET Laces='White' WHERE Color='White';
+UPDATE Assign05Shoes SET Laces='Red' WHERE Color='Red';
+
+SELECT * FROM Assign05Shoes;
+SELECT Name FROM Assign05Shoes;
+
+DELETE FROM Assign05Shoes WHERE Name='Nike Air Jordan 6';
