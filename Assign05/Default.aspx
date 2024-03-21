@@ -8,6 +8,7 @@
 </head>
 <body>
     <asp:HyperLink ID="HyperLink1" runat="server" NavigateURL="Shoes.aspx">Link to Shoes.aspx</asp:HyperLink>
+    <asp:HyperLink ID="HyperLink2" runat="server" NavigateURL="query.txt">Link to Query.txt</asp:HyperLink>
     <form id="form1" runat="server">
         <div>
             <asp:ScriptManager ID="ScriptManager1" runat="server">
