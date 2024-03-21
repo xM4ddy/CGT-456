@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="colors.aspx.cs" Inherits="Assign04.colors" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="colors.aspx.cs" Inherits="Assign04.colors" %>
 
 <!DOCTYPE html>
 
