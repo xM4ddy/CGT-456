@@ -1,0 +1,72 @@
+﻿<Window x:Class="MemoryMatch.Memory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainWindow" Height="650" Width="900" Icon="./cardBack.ico">
+    <Grid>
+        <Image HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="900" Height="650" Stretch="Fill" Source="/background.jpg" />
+        <Label x:Name="lblTitle" Height="80" Width="505" FontSize="60" FontFamily="Imprint MT Shadow" TabIndex="0" Foreground="White" Background="Transparent" Margin="204,9,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Memory Match" />
+        <Label x:Name="lblCongrats" Height="63" Width="306" FontSize="40" FontFamily="Microsoft Sans Serif" TabIndex="13" Foreground="White" Background="Transparent" Margin="293,212, 0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Congratulations!" />
+        <Button x:Name="btnPlayAgain" Height="40" Width="140" TabIndex="14" Click="btnPlayAgain_Click" Margin="374,0,0,248" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Play Again" />
+
+        <Border x:Name="pbBorder1" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127, 108,0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox1" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder2" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304, 108,0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox2" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder3" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="487, 108, 0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox3" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder4" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="674, 108, 0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox4" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder5" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127, 268, 0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox5" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder6" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304, 268, 0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox6" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder7" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="487, 268, 0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox7" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder8" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="674, 268, 0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox8" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder9" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127, 439,0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox9" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder10" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304,439,0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox10" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder11" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="487,439,0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox11" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Border x:Name="pbBorder12" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="674,439,0,0" BorderThickness="0" Background="Transparent">
+            <Image Height="140" HorizontalAlignment="Left" MouseDown="PictureBox_Click" VerticalAlignment="Top" x:Name="pictureBox12" Stretch="Fill" Width="100" Source="./cardBack.png"/>
+        </Border>
+
+        <Label HorizontalAlignment="Right" Margin="0,0,5,20" Foreground="White" VerticalAlignment="Bottom" Content="Created by:" FontStyle="Italic" />
+        <Label HorizontalAlignment="Right" Margin="0, 0,4, 8" Foreground="White" VerticalAlignment="Bottom" Content="Maddy O Wilcox" FontStyle="Italic" />
+
+        <Image x:Name="pbMatch1" Height="54" Width="45" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Margin="619,22,0,0" Source="./cardPair.png" RenderTransformOrigin="0.13,0.57" />
+        <Image x:Name="pbMatch2" Height="54" Width="45" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Margin="664,22,0,0" Source="./cardPair.png" />
+        <Image x:Name="pbMatch3" Height="54" Width="45" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Margin="709,22,0,0" Source="./cardPair.png" />
+        <Image x:Name="pbMatch4" Height="54" Width="44" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Margin="754,22,0,0" Source="./cardPair.png" />
+        <Image x:Name="pbMatch5" Height="54" Width="45" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Margin="798,22,0,0" Source="./cardPair.png" />
+        <Image x:Name="pbMatch6" Height="54" Width="45" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Margin="843,22,0,0" Source="./cardPair.png" RenderTransformOrigin="1.522,0.553" />
+
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,9,0,0" Foreground="White" Content="Wrong Attempts: " FontStyle="Italic" FontSize="16" />
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="63,19,0,0" Foreground="White" Content="x" FontStyle="Italic" x:Name="lblMistakes" Width="86" FontSize="48" />
+    </Grid>
+</Window>
