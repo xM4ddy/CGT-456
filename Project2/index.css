@@ -1,0 +1,144 @@
+:root {
+	--bg: #1E1E2E;
+	--bg-dark: #11111b;
+	--fg: #CDD6F4;
+	--red: #F38BA8;
+	--green: #A6E3A1;
+	--yellow: #F9E2AF;
+	--blue: #89B4FA;
+	--purple: #F5C2E7;
+}
+
+body {
+	color: var(--fg);
+	background-color: var(--bg);
+	margin: 0;
+	height: calc(100vh - 5px);
+	overflow: hidden;
+	display: grid;
+	border: 2px #f1bceb solid;
+}
+
+main {
+	font-size: 1.8rem;
+	background-color: var(--bg-dark);
+	border-radius: 15px;
+	color: var(--fg);
+	box-shadow: 0px 0px 10px var(--fg);
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	max-height: 600px;
+	max-width: 600px;
+}
+
+#title {
+	text-align: center;
+}
+
+#score {
+	transition: text-shadow 0.2s;
+	font-family: monospace;
+	z-index: -1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.score-change {
+	text-shadow: var(--fg) 1px 0 10px;
+}
+
+#container {
+	display: grid;
+	aspect-ratio: 1;
+	grid-template-columns: min(300px, min(40vw, 40vh)) min(300px, min(40vw, 40vh));
+	max-height: 600px;
+	max-width: 600px;
+}
+
+#button_red,
+#button_yellow,
+#button_green,
+#button_blue {
+	transition: transform ease-in-out 0.3s, box-shadow 0.3s, filter 0.1s;
+	transform: scale(1);
+	margin: 20px;
+	border: 2px #f1bceb solid;
+	border-radius: 10px;
+	box-shadow: 0;
+	aspect-ratio: 1;
+	min-width: 0;
+	min-height: 0;
+	color: #00000000
+}
+
+.playerButton:hover {
+	box-shadow: inset 0px 0px 10px #000;
+}
+
+.playerButton:active {
+	filter: brightness(160%);
+	box-shadow: inset 0px 0px 0px #000;
+}
+
+#button_red {
+	background-color: var(--red);
+}
+
+#button_green {
+	background-color: var(--green);
+}
+
+#button_yellow {
+	background-color: var(--yellow);
+}
+
+#button_blue {
+	background-color: var(--blue);
+}
+
+.active {
+	animation: flash 0.6s ease-in-out 0s forwards;
+	box-shadow: inset 0px 0px 0px #000;
+	filter: brightness(100%);
+}
+
+#StartButton {
+	z-index: 2;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: var(--purple);
+	color: var(--bg);
+	border: 2px #f1bceb solid;
+	border-radius: 10px;
+	font-size: 2rem;
+}
+
+form {
+	all: unset;
+}
+
+@keyframes flash {
+	0% {
+		box-shadow: inset 0px 0px 0px #000;
+		filter: brightness(100%);
+	}
+	10% {
+		box-shadow: inset 0px 0px 20px #000;
+		filter: brightness(160%);
+	}
+	90% {
+		box-shadow: inset 0px 0px 20px #000;
+		filter: brightness(160%);
+	}
+	100% {
+		box-shadow: inset 0px 0px 0px #000;
+		filter: brightness(100%);
+	}
+}

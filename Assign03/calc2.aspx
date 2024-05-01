@@ -173,6 +173,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager" runat="server" />
         <div id="Container">
             <div id="LabelBackground">
                 <asp:Label ID="Label1" runat="server" Text="Single Digit Calculator v2"></asp:Label>
